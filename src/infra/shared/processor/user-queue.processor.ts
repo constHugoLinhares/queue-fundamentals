@@ -14,7 +14,6 @@ export class UserProcessor {
   async handleCreateUser(job: Job) {
     const user = await this.userService.createUser(job.data);
 
-    console.log('c');
     await this.mailService.sendUserCreationSuccess({
       email: user.email,
       name: user.name,

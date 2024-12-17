@@ -13,7 +13,7 @@ export class MailService {
   constructor(private readonly sendGrid: SendGridService) {}
   async sendUserCreationSuccess(request: SendCreateUserRequest) {
     try {
-      const a = await this.sendGrid.send({
+      await this.sendGrid.send({
         from: NO_REPLY_EMAIL,
         to: request.email,
         subject: 'Código de validação de conta',
@@ -22,7 +22,6 @@ export class MailService {
           name: request.name,
         },
       });
-      console.log(a);
       return true;
     } catch (error) {
       console.log(error);

@@ -10,7 +10,6 @@ let userIdCounter = 1;
 export class UserService {
   constructor(@InjectQueue(PROCESSOR.USER_QUEUE) private userQueue: Queue) {}
   async addUserToQueue(createUserDto: CreateUserDto) {
-    console.log('b');
     await this.userQueue.add(PROCESS.CREATE_USER, createUserDto);
   }
 
