@@ -1,7 +1,7 @@
 import { InjectQueue } from '@nestjs/bull';
 import { Injectable } from '@nestjs/common';
 import { Queue } from 'bull';
-import { CreateUserDto } from '../../../infra/dto/create-user.dto';
+import { CreateUserDto } from '../../../infra/http/dto/create-user.dto';
 import { User } from '../../../interface/interface.user';
 const users: User[] = [];
 let userIdCounter = 1;
