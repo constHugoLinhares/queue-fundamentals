@@ -1,8 +1,9 @@
 import { Module } from '@nestjs/common';
-import { UserService } from './user/user-service.use-case';
+import { MailModule } from './mail/mail.module';
+import { UserModule } from './user/user.module';
 
 @Module({
-  providers: [UserService],
-  exports: [UserService],
+  imports: [UserModule, MailModule],
+  exports: [UserModule, MailModule],
 })
 export class UseCasesModule {}

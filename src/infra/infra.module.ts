@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
-import { ProcessorModule } from 'src/shared/processor/processor.module';
-import { SharedModule } from 'src/shared/shared.module';
+import { ProcessorModule } from 'src/infra/shared/processor/processor.module';
+import { SharedModule } from 'src/infra/shared/shared.module';
 import { HttpModule } from './http/http.module';
 
 @Module({

@@ -2,6 +2,7 @@ import { BullModule } from '@nestjs/bull';
 import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import * as Joi from 'joi';
+import { PROCESSOR } from 'src/domain/enums/processors.enum';
 
 @Module({
   imports: [
@@ -23,7 +24,7 @@ import * as Joi from 'joi';
           },
         }) as any,
     }),
-    BullModule.registerQueue({ name: 'user-queue' }),
+    BullModule.registerQueue({ name: PROCESSOR.USER_QUEUE }),
   ],
   exports: [BullModule],
 })
